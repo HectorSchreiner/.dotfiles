@@ -108,7 +108,7 @@
      curl
      wget
      git
-     neovim
+     neofetch
 
      virt-manager
     virt-viewer
