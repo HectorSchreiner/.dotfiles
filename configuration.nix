@@ -11,6 +11,8 @@
     ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  programs.hyprland.enable = true; # enable Hyprland
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -62,7 +64,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  services.openssh.enable = true;
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -102,6 +104,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     # essentials
      vim
      neovim
      wget
@@ -109,14 +112,36 @@
      wget
      git
      neofetch
+     openvpn
+     
+     # hyprland
+     kitty
+     alacritty
+     waybar
+     dunst
+     hyprpaper
+     wofi
 
+     # text
+     obsidian
+     vscode
+     libreoffice-qt6-fresh
+     zed-editor
+
+     # browsers
+     brave
+     firefox
+     
+     # vm
      virt-manager
-    virt-viewer
-    spice 
-    spice-gtk
-    spice-protocol
-    win-virtio
-    win-spice
+     virt-viewer
+     spice 
+     spice-gtk
+     spice-protocol
+     win-virtio
+     win-spice
+     
+     # development tools
      github-desktop
   ];
 
@@ -146,7 +171,13 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   programs.dconf.enable = true;
-  
+ 
+ programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/user/my-nixos-config";
+  };
   
   virtualisation = {
     libvirtd = {
