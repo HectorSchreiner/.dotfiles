@@ -114,7 +114,7 @@
      neofetch
      openvpn
      
-     # hyprland
+     # dotfiles
      kitty
      alacritty
      waybar
@@ -123,9 +123,12 @@
      wofi
      stow
      hyprcursor
+     nwg-look
+
+     # themes
      starship
      nerdfonts
-     nwg-look
+     adwaita-icon-theme
 
      # text
      obsidian
