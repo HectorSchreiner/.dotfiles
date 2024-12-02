@@ -9,7 +9,83 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  
+
+   environment.systemPackages = with pkgs; [
+     # essentials
+     vim
+     neovim
+     wget
+     curl
+     wget
+     git
+     neofetch
+     openvpn
+     bat
+     eza
+     fzf
+     playerctl
+     openssl
+     p7zip
+     inetutils
+     dig
+     gimp
+     
+     # dotfiles
+     kitty
+     alacritty
+     waybar
+     dunst
+     hyprpaper
+     wofi
+     stow
+     hyprcursor
+
+     # themes
+     starship
+     nerdfonts
+     adwaita-icon-theme
+
+     # text
+     obsidian
+     vscode
+     libreoffice-qt6-fresh
+     zed-editor
+
+     # browsers
+     brave
+     firefox
+     
+     # vm
+     virt-manager
+     virt-viewer
+     spice 
+     spice-gtk
+     spice-protocol
+     win-virtio
+     win-spice
+     
+     # development tools
+     github-desktop
+     rustup
+     cargo
+     python39
+
+     # hackertools
+     nmap
+     gobuster
+     exiftool
+     netexec
+     ffuf
+     metasploit
+     exploitdb
+     burpsuite
+     hashcat
+     hashcat-utils
+     john
+     aircrack-ng
+     wireshark
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.hyprland.enable = true; # enable Hyprland
@@ -103,55 +179,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     # essentials
-     vim
-     neovim
-     wget
-     curl
-     wget
-     git
-     neofetch
-     openvpn
-     
-     # dotfiles
-     kitty
-     alacritty
-     waybar
-     dunst
-     hyprpaper
-     wofi
-     stow
-     hyprcursor
-     nwg-look
-
-     # themes
-     starship
-     nerdfonts
-     adwaita-icon-theme
-
-     # text
-     obsidian
-     vscode
-     libreoffice-qt6-fresh
-     zed-editor
-
-     # browsers
-     brave
-     firefox
-     
-     # vm
-     virt-manager
-     virt-viewer
-     spice 
-     spice-gtk
-     spice-protocol
-     win-virtio
-     win-spice
-     
-     # development tools
-     github-desktop
-  ];
+ 
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
