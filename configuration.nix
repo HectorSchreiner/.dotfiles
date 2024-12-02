@@ -67,7 +67,6 @@
      zed-editor
 
      # browsers
-     brave
      firefox
      
      # vm
@@ -85,6 +84,7 @@
      cargo
      python39
      clang
+     rustc
 
      # hackertools
      nmap
