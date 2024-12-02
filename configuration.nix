@@ -39,6 +39,9 @@
      htop
      vlc
      networkmanagerapplet
+     gnome-keyring
+     libsecret
+     kdePackages.signon-kwallet-extension
      
      # dotfiles
      kitty
