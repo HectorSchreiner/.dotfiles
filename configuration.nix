@@ -121,6 +121,11 @@
      dunst
      hyprpaper
      wofi
+     stow
+     hyprcursor
+     starship
+     nerdfonts
+     nwg-look
 
      # text
      obsidian
