@@ -18,7 +18,7 @@
      curl
      wget
      git
-     neofetch
+     fastfetch
      openvpn
      bat
      eza
@@ -29,6 +29,16 @@
      inetutils
      dig
      gimp
+     tmux
+     zsh
+     ssh
+     ffmpeg
+     imagemagick
+     strace
+     ltrace
+     htop
+     vlc
+     ufw
      
      # dotfiles
      kitty
@@ -69,6 +79,7 @@
      rustup
      cargo
      python39
+     clang
 
      # hackertools
      nmap
@@ -84,6 +95,12 @@
      john
      aircrack-ng
      wireshark
+
+     # applications
+     spotify
+     discord
+     bitwarden
+
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
