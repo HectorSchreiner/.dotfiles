@@ -74,7 +74,7 @@
     },
     "network": {
       "format" : " {essid}",
-      "format-wifi": "  {essid}",
+      "format-wifi": "   {essid}",
       "format-ethernet": "󰈀 {essid}",
       "format-disconected": " Disconnected",
       "on-click": "wl-copy $(ip a | grep 'inet ' | tail -n 1 | grep -oP 'inet \\K[\\d.]+')",

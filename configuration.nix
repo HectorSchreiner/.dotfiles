@@ -25,20 +25,20 @@
      fzf
      playerctl
      openssl
+     openssh
      p7zip
      inetutils
      dig
      gimp
      tmux
      zsh
-     ssh
      ffmpeg
      imagemagick
      strace
      ltrace
      htop
      vlc
-     ufw
+     networkmanagerapplet
      
      # dotfiles
      kitty
@@ -49,6 +49,8 @@
      wofi
      stow
      hyprcursor
+     wlogout
+     swaylock
 
      # themes
      starship
@@ -100,7 +102,6 @@
      spotify
      discord
      bitwarden
-
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
