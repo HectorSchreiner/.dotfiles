@@ -43,7 +43,8 @@
      libsecret
      kdePackages.signon-kwallet-extension
      file
-     
+ 
+
      # dotfiles
      kitty
      alacritty
