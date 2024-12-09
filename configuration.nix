@@ -43,6 +43,8 @@
      libsecret
      kdePackages.signon-kwallet-extension
      file
+     wgnord
+     flameshot
  
 
      # dotfiles
@@ -70,6 +72,7 @@
 
      # browsers
      firefox
+     librewolf
      
      # vm
      virt-manager
@@ -265,7 +268,10 @@
   };
   services.spice-vdagentd.enable = true;
 
+ 
+
 
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
+
