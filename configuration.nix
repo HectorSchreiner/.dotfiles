@@ -44,7 +44,9 @@
      kdePackages.signon-kwallet-extension
      file
      wgnord
+     wireguard-tools
      flameshot
+     grim
  
 
      # dotfiles
