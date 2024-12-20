@@ -116,6 +116,7 @@
      spotify
      discord
      bitwarden
+     telegram-desktop
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
