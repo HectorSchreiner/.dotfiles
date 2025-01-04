@@ -48,10 +48,13 @@
      flameshot
      grim
  
+     #math and school
+     sage
 
      # dotfiles
      kitty
      alacritty
+     #ghostty
      waybar
      dunst
      hyprpaper
