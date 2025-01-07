@@ -4,13 +4,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    ghostty.url ="github:ghostty-org/ghostty";
   };
 
-  outputs = { self, nixpkgs, ghostty, ...}:
+  outputs = { self, nixpkgs, ghostty, zen-browser, ...}:
     let
 	lib = nixpkgs.lib;
     in {

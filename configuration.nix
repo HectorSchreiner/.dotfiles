@@ -15,6 +15,7 @@
      vim
      neovim
      wget
+     flatpak
      curl
      wget
      git
