@@ -20,6 +20,7 @@
      wget
      git
      fastfetch
+     neofetch
      openvpn
      bat
      eza
@@ -48,7 +49,12 @@
      wireguard-tools
      flameshot
      grim
- 
+     zip
+     unzip
+
+     # audio and bluetooth
+     blueman
+
      #math and school
      sage
 
@@ -60,6 +66,7 @@
      dunst
      hyprpaper
      wofi
+     rofi
      stow
      hyprcursor
      wlogout
@@ -79,6 +86,7 @@
      # browsers
      firefox
      librewolf
+     chromium
      
      # vm
      virt-manager
@@ -99,6 +107,10 @@
      clippy
      rustfmt
      hugo
+     wasm-bindgen-cli
+     wasm-pack
+     
+     godot_4
 
      # hackertools
      nmap
@@ -123,6 +135,8 @@
      telegram-desktop
   ];
 
+  services.flatpak.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.nix-ld.enable = true;
@@ -134,6 +148,10 @@
     # here, NOT in environment.systemPackages
 
   ];
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boo
+  services.blueman.enable = true;
 
   programs.hyprland.enable = true; # enable Hyprland
   
@@ -189,8 +207,9 @@
   services.printing.enable = true;
   services.openssh.enable = true;
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -223,6 +242,12 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  services.ollama = {
+    enable = true;
+  };
+
+  services.open-webui.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
