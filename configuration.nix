@@ -54,6 +54,7 @@
 
      # audio and bluetooth
      blueman
+     bluez
 
      #math and school
      sage
