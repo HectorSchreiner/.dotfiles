@@ -26,7 +26,7 @@
      eza
      fzf
      playerctl
-     openssl
+     openssl_3
      openssh
      p7zip
      inetutils
@@ -51,6 +51,28 @@
      grim
      zip
      unzip
+     gnome-keyring
+     git
+     pomodoro
+     pass
+     grimblast
+     xbrightness
+     xrdp
+     remmina
+     netcat
+     zoxide
+     btop
+     pkg-config     
+     docker-compose
+     bat
+     dust
+     tokei
+     
+     hyprpanel
+     wl-clipboard
+     dart-sass
+     gtksourceview3
+     libgtop
 
      # audio and bluetooth
      blueman
@@ -58,6 +80,7 @@
 
      #math and school
      sage
+     typst
 
      # dotfiles
      kitty
@@ -110,6 +133,7 @@
      hugo
      wasm-bindgen-cli
      wasm-pack
+     python313Packages.pip
      
      godot_4
 
@@ -136,25 +160,25 @@
      telegram-desktop
   ];
 
+  services.gnome.gnome-keyring.enable = true;
   services.flatpak.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.nix-ld.enable = true;
-
-  programs.nix-ld.libraries = with pkgs; [
-
-    # Add any missing dynamic libraries for unpackaged programs
-
-    # here, NOT in environment.systemPackages
-
-  ];
+  programs.nix-ld.libraries = with pkgs; [ ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boo
   services.blueman.enable = true;
 
   programs.hyprland.enable = true; # enable Hyprland
+
+  virtualisation.docker = {
+    enable = true;
+
+  };
+
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -163,12 +187,9 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
+  #virtualisation.docker.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
@@ -211,6 +232,9 @@
 
   security.rtkit.enable = true;
 
+
+
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -240,9 +264,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   services.ollama = {
     enable = true;
