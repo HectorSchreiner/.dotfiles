@@ -60,7 +60,6 @@
      xrdp
      remmina
      netcat
-     zoxide
      btop
      pkg-config     
      docker-compose
@@ -95,6 +94,8 @@
      hyprcursor
      wlogout
      swaylock
+     zoxide
+     zsh-powerlevel10k
 
      # themes
      starship
@@ -173,6 +174,7 @@
   services.blueman.enable = true;
 
   programs.hyprland.enable = true; # enable Hyprland
+  programs.zsh.enable = true;
 
   virtualisation.docker = {
     enable = true;
@@ -232,9 +234,6 @@
 
   security.rtkit.enable = true;
 
-
-
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -256,11 +255,48 @@
     isNormalUser = true;
     description = "hector";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
-      kate
     #  thunderbird
     ];
+
   };
+  
+  environment.shellInit = ''
+    eval "$(starship init zsh)"
+    eval "$(zoxide init zsh)"
+    fastfetch
+
+    fzf_cd() {
+      local dir
+      dir=$(find . -type d 2>/dev/null | fzf --preview 'ls -la {}' --preview-window=up:40%:wrap --border --header="Select a directory to cd") && cd "$dir"
+    }
+
+    alias rcedit="sudo nvim ~/.bashrc"
+    alias rebuild="sudo nixos-rebuild switch --flake ~/.dotfiles"
+    alias dot="cd ~/.dotfiles"
+    alias conf="cd ~/.config/"
+    alias nixedit="nvim ~/.dotfiles/configuration.nix"
+    alias h="cd ~/"
+    alias s="source ~/.zshrc"
+    alias l="eza -l"
+    alias tree="eza -T --icons"
+    alias ..="cd .."
+    alias zed="zeditor"
+    alias source="source ~/.zshrc"
+    alias rst="cd ~/Programming/rust"
+    alias cd="z"
+    alias ff="fastfetch"
+    alias lconf="ls -al ~/.config/"
+    alias gc="git commit . -m 'Updated'"
+    alias gf="git fetch"
+    alias gps="git push"
+    alias gpl="git pull"
+    alias tn="tmux new-session -s"
+    alias tl="tmux list-sessions"
+    alias ta="tmux attach-session"
+    alias fcd="fzf_cd"
+  '';
 
   # Install firefox.
   programs.firefox.enable = true;
