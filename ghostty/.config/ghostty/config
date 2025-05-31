@@ -5,4 +5,5 @@ macos-titlebar-style = hidden
 copy-on-select = clipboard
 background-opacity = 0.8
 gtk-titlebar = false
-shell-integration = zsh
+shell-integration = "zsh"
+

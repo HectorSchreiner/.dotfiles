@@ -66,6 +66,7 @@
      bat
      dust
      tokei
+     nitch
      
      hyprpanel
      wl-clipboard
@@ -178,7 +179,6 @@
 
   virtualisation.docker = {
     enable = true;
-
   };
 
   
@@ -239,18 +239,18 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  #programs.zsh = {
+   # enableCompletion = true;
+    #autosuggestion.enable = true;
+    #syntaxHighlighting.enable = true;
+  #};
+
   users.users.hector = {
     isNormalUser = true;
     description = "hector";
@@ -265,7 +265,7 @@
   environment.shellInit = ''
     eval "$(starship init zsh)"
     eval "$(zoxide init zsh)"
-    fastfetch
+    nitch
 
     fzf_cd() {
       local dir
@@ -286,7 +286,7 @@
     alias source="source ~/.zshrc"
     alias rst="cd ~/Programming/rust"
     alias cd="z"
-    alias ff="fastfetch"
+    alias ff="nitch"
     alias lconf="ls -al ~/.config/"
     alias gc="git commit . -m 'Updated'"
     alias gf="git fetch"
