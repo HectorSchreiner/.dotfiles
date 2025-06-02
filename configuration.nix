@@ -67,7 +67,14 @@
      dust
      tokei
      nitch
-     
+     nodejs
+     pnpm
+     usbutils
+
+     # creative software
+     blender
+     kdenlive
+
      hyprpanel
      wl-clipboard
      dart-sass
@@ -85,7 +92,6 @@
      # dotfiles
      kitty
      alacritty
-     #ghostty
      waybar
      dunst
      hyprpaper
@@ -96,7 +102,7 @@
      wlogout
      swaylock
      zoxide
-     zsh-powerlevel10k
+     yazi
 
      # themes
      starship
@@ -272,6 +278,15 @@
       dir=$(find . -type d 2>/dev/null | fzf --preview 'ls -la {}' --preview-window=up:40%:wrap --border --header="Select a directory to cd") && cd "$dir"
     }
 
+    function y() {
+	    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	    yazi "$@" --cwd-file="$tmp"
+	    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		    builtin cd -- "$cwd"
+	    fi
+	    rm -f -- "$tmp"
+    }
+
     alias rcedit="sudo nvim ~/.bashrc"
     alias rebuild="sudo nixos-rebuild switch --flake ~/.dotfiles"
     alias dot="cd ~/.dotfiles"
@@ -296,6 +311,8 @@
     alias tl="tmux list-sessions"
     alias ta="tmux attach-session"
     alias fcd="fzf_cd"
+
+
   '';
 
   # Install firefox.
