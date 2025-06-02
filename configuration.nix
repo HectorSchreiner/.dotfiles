@@ -19,67 +19,59 @@
      curl
      wget
      git
-     fastfetch
-     neofetch
-     openvpn
      bat
      eza
      fzf
+     tmux
+     zsh
+     htop
+     file
+     git
+     dig
+     ffmpeg
+     strace
+     ltrace
+     vlc
+     fastfetch
+     flameshot
+     grim
+     nitch
+     usbutils
+     grimblast
+     remmina        #rdp
+     xrdp           #rdp
+     btop
+
+     p7zip
+     zip
+     unzip
+
+     # Network tools
+     openvpn
      playerctl
      openssl_3
      openssh
-     p7zip
      inetutils
-     dig
-     gimp
-     tmux
-     zsh
-     ffmpeg
-     imagemagick
-     strace
-     ltrace
-     htop
-     vlc
      networkmanagerapplet
+     wireguard-tools
+     netcat
+
+     # password keyring tools
      gnome-keyring
      libsecret
      kdePackages.signon-kwallet-extension
-     file
      wgnord
-     wireguard-tools
-     flameshot
-     grim
-     zip
-     unzip
      gnome-keyring
-     git
      pomodoro
      pass
-     grimblast
      xbrightness
-     xrdp
-     remmina
-     netcat
-     btop
-     pkg-config     
-     docker-compose
-     bat
-     dust
-     tokei
-     nitch
-     nodejs
-     pnpm
-     usbutils
 
      # creative software
      blender
      kdenlive
-
-     hyprpanel
-     wl-clipboard
-     dart-sass
-     gtksourceview3
-     libgtop
+     gimp
+     imagemagick
+     godot_4
 
      # audio and bluetooth
      blueman
@@ -103,6 +95,14 @@
      swaylock
      zoxide
      yazi
+     bat
+     dust
+     tokei
+     hyprpanel
+     wl-clipboard
+     dart-sass
+     gtksourceview3
+     libgtop
 
      # themes
      starship
@@ -115,7 +115,7 @@
      libreoffice-qt6-fresh
      zed-editor
 
-     # browsers
+     # browsers zen browser as a flake
      firefox
      librewolf
      chromium
@@ -142,8 +142,10 @@
      wasm-bindgen-cli
      wasm-pack
      python313Packages.pip
-     
-     godot_4
+     pkg-config     
+     docker-compose
+     nodejs
+     pnpm
 
      # hackertools
      nmap
