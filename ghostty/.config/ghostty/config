@@ -1,0 +1,8 @@
+font-family = "JetbrainsMono Nerd Font"
+freetype-load-flags = hinting
+theme = GruvboxDark
+macos-titlebar-style = hidden
+background-opacity = 0.8
+gtk-titlebar = false
+shell-integration = "bash"
+

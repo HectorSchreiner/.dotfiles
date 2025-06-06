@@ -1,0 +1,70 @@
+configuration {
+  modi: "drun,run,window";
+  show-icons: true;
+  icon-theme: "Papirus";
+  font: "JetBrainsMono Nerd Font 12";
+  theme: "gruvbox";
+}
+
+* {
+  background:    #282828;  // dark0
+  background-alt:#3c3836;  // dark1
+  foreground:    #ebdbb2;  // light1
+  selected:      #458588;  // blue
+  active:        #d79921;  // yellow
+  urgent:        #cc241d;  // red
+  border-color:  #b16286;  // purple
+  border:        2px;
+  border-radius: 8px;
+  padding:       6px;
+  spacing:       6px;
+}
+
+window {
+  location: center;
+  width: 500px;
+  border: 2px;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: @background;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  background-color: @background;
+}
+
+inputbar {
+  padding: 4px;
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+
+listview {
+  lines: 10;
+  fixed-height: true;
+  background-color: @background;
+  spacing: 4px;
+  scrollbar: true;
+  padding: 4px;
+}
+
+element {
+  padding: 4px;
+  text-color: @foreground;
+  background-color: @background;
+}
+
+element selected {
+  text-color: @foreground;
+  background-color: @selected;
+}
+
+element urgent {
+  background-color: @urgent;
+}
+
+element active {
+  background-color: @active;
+}
+

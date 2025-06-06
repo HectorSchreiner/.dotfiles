@@ -1,0 +1,20 @@
+* {
+    background-color: #1e1e2e;
+    color: #e0d7ff;
+    border-color: #2a2a37;
+}
+
+.wofi-selected {
+    background-color: #f5bde6;
+    color: #1e1e2e;
+}
+
+.wofi-entry {
+    color: #e0d7ff;
+    background-color: #1e1e2e;
+}
+
+.wofi-entry:hover {
+    background-color: #2a2a37;
+}
+
