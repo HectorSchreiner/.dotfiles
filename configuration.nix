@@ -41,8 +41,7 @@
      remmina        #rdp
      xrdp           #rdp
      btop
-
-     fprintd
+     marp-cli
 
      p7zip
      zip
