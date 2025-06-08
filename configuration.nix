@@ -35,6 +35,8 @@
      fastfetch
      flameshot
      grim
+     swappy
+     slurp
      nitch
      usbutils
      grimblast
