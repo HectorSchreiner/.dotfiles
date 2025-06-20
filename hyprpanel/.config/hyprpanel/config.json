@@ -398,5 +398,11 @@
   "bar.windowtitle.custom_title": true,
   "bar.windowtitle.truncation": true,
   "menus.media.hideAlbum": false,
-  "menus.media.displayTime": false
+  "menus.media.displayTime": false,
+  "theme.bar.buttons.modules.netstat.enableBorder": false,
+  "menus.clock.time.hideSeconds": true,
+  "menus.clock.weather.enabled": false,
+  "bar.clock.format": "%a %b %d  %I:%M:%S",
+  "bar.notifications.show_total": false,
+  "bar.network.showWifiInfo": true
 }

@@ -67,8 +67,9 @@
      gnome-keyring
      pomodoro
      pass
-     xbrightness
 
+     xbrightness
+     brightnessctl light
      # creative software
      #blender
      #kdenlive
