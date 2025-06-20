@@ -164,7 +164,6 @@
      wireshark
 
      # applications
-     spotify
      discord
      bitwarden
      telegram-desktop

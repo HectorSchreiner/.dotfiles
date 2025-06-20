@@ -20,9 +20,13 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+    };
   };
 
-  outputs = { self, nixpkgs, zen-browser, hyprpanel, ghostty, ... }:
+  outputs = { self, nixpkgs, zen-browser, hyprpanel, ghostty, spicetify-nix, ... }:
   let
     system = "x86_64-linux";
 
@@ -47,6 +51,20 @@
 
         modules = [
           ./configuration.nix
+
+          spicetify-nix.nixosModules.default
+
+          ({ config, pkgs, ... }: {
+            programs.spicetify = let
+              spicePkgs = spicetify-nix.legacyPackages.${system};
+            in {
+              enable    = true;
+              theme     = spicePkgs.themes.Matte; 
+              extensions = [ 
+                  spicePkgs.extensions.shuffle 
+              ];   
+            };
+          })
 
           # Inline module to add extra packages
           ({ pkgs, ... }: {
