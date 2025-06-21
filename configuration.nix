@@ -107,6 +107,7 @@
      dart-sass
      gtksourceview3
      libgtop
+     os-prober
 
      # themes
      starship
@@ -169,6 +170,8 @@
      bitwarden
      telegram-desktop
      obs-studio
+     spotify
+     onlyoffice-desktopeditors
   ];
 
   fonts = {
@@ -180,7 +183,8 @@
 
   services.gnome.gnome-keyring.enable = true;
   services.flatpak.enable = true;
-
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.nix-ld.enable = true;
@@ -198,7 +202,21 @@
   };
   
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
+
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+    useOSProber = true;
+    timeout = -1;
+  };
+  boot.loader.grub2-theme = {
+    enable = true;
+    theme = "stylish";
+    footer = true;
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -231,7 +249,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
