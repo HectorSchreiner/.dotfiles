@@ -404,5 +404,6 @@
   "menus.clock.weather.enabled": false,
   "bar.clock.format": "%a %b %d  %I:%M:%S",
   "bar.notifications.show_total": false,
-  "bar.network.showWifiInfo": true
+  "bar.network.showWifiInfo": true,
+  "bar.customModules.weather.unit": "metric"
 }
