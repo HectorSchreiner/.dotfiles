@@ -203,13 +203,13 @@
   
   # Bootloader.
   boot.loader.systemd-boot.enable = false;
+  boot.loader.timeout = 15;
 
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
     device = "nodev";
     useOSProber = true;
-    timeout = -1;
   };
   boot.loader.grub2-theme = {
     enable = true;
