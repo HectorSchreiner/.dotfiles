@@ -26,7 +26,6 @@
      zsh
      htop
      file
-     git
      dig
      ffmpeg
      strace
