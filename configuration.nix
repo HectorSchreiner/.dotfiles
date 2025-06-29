@@ -164,7 +164,7 @@
      #aircrack-ng
      wireshark
 
-     # applications
+     #  applications
      discord
      bitwarden
      telegram-desktop
