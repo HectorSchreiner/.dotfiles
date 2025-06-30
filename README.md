@@ -1,6 +1,8 @@
 # GruvBox Themed Dotfiles
 These are my Gruvbox dotfiles for nixos. 
 ![Gruvbox](screenshots/desktop.png)
+![Gruvbox](screenshots/desktop_2.png)
+![Gruvbox](screenshots/desktop_3.png)
 
 # Programs
 - Hyprland
