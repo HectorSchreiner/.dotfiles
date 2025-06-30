@@ -202,20 +202,6 @@
   
   # Bootloader.
   boot.loader.systemd-boot.enable = false;
-  boot.loader.timeout = 15;
-
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    device = "nodev";
-    useOSProber = true;
-  };
-  boot.loader.grub2-theme = {
-    enable = true;
-    theme = "stylish";
-    footer = true;
-  };
-
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
