@@ -1,11 +1,8 @@
 # GruvBox Themed Dotfiles
 These are my Gruvbox dotfiles for nixos. 
+![Gruvbox](screenshots/desktop.png)
 
-# Showcase
-Cool image of rice here...
-![Gruvbox](screenshots/desktop_empty.png)
-
-# The configuraion uses the following programs
+# Programs
 - Hyprland
 - Hyprpapr
 - Hyprpanel
