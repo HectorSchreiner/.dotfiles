@@ -20,13 +20,10 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
-    grub2-themes = {
-      url = "github:vinceliuice/grub2-themes";
-    };
 
   };
 
-  outputs = { self, nixpkgs, zen-browser, hyprpanel, ghostty, grub2-themes, ... }:
+  outputs = { self, nixpkgs, zen-browser, hyprpanel, ghostty, ... }:
   let
     system = "x86_64-linux";
 
@@ -51,8 +48,6 @@
 
         modules = [
           ./configuration.nix
-
-          grub2-themes.nixosModules.default
 
           # Inline module to add extra packages
           ({ pkgs, ... }: {
