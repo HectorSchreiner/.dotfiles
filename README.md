@@ -8,13 +8,11 @@ These are my Gruvbox dotfiles for nixos.
 - Hyprland
 - Hyprpapr
 - Hyprpanel
-- Hyprlock
 - Wofi
 - Ghostty
 - Tmux
 - Neovim
 - Zen-Browser
-- Nitch
 
 # Setup
 ```bash
