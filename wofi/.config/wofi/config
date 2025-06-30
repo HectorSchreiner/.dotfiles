@@ -6,7 +6,7 @@ text_color = #e0d7ff
 selection_background_color = #f5bde6
 selection_text_color = #1e1e2e
 
-theme = "~/.dotfiles/wofi/.config/wofi/styles.css"
+theme = "~/.config/wofi/styles.css"
 
 [fonts]
 # You can customize your fonts as well, here is a typical example

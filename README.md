@@ -3,6 +3,7 @@ These are my Gruvbox dotfiles for nixos.
 
 # Showcase
 Cool image of rice here...
+![Gruvbox](screenshots/desktop_empty.png)
 
 # The configuraion uses the following programs
 - Hyprland
