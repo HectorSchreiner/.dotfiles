@@ -16,7 +16,7 @@ These are my Gruvbox dotfiles for nixos.
 
 # Setup
 ```bash
-git clone https://github.com/HectorSchreiner/nixos_dotfiles/ ~/.dotfiles
+git clone https://github.com/HectorSchreiner/.dotfiles
 rm ~/.dotfiles/hardware-configuration.nix
 cp /etc/nixos/hardware-configuration.nix ~/.dotfiles
 sudo nixos-rebuild switch --flake ~/.dotfiles#nixos
