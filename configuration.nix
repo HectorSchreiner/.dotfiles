@@ -191,7 +191,8 @@
   services.blueman.enable = true;
 
   programs.hyprland.enable = true; # enable Hyprland
-  programs.zsh.enable = true;
+
+  programs.zoxide.enableBashIntegration= true;
 
   virtualisation.docker = {
     enable = true;
