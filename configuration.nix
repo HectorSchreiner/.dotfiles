@@ -260,11 +260,16 @@
   users.users.hector = {
     isNormalUser = true;
     description = "hector";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     packages = with pkgs; [
     #  thunderbird
     ];
-
+  };
+  # wireshark fix
+  services.udev = {
+    extraRules = ''
+      SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640"
+    '';
   };
 
   programs.bash = {
@@ -285,7 +290,7 @@
 	    fi
 	    rm -f -- "$tmp"
     }
-
+    alias nordvpn="sudo openvpn --config ~/secrets/albania-nordvpn-conf.ovpn --auth-user-pass ~/secrets/nord-creds.txt"
     alias rcedit="sudo nvim ~/.bashrc"
     alias rebuild="sudo nixos-rebuild switch --flake ~/.dotfiles"
     alias dot="cd ~/.dotfiles"
