@@ -177,6 +177,9 @@
     ];
   };
 
+  programs.steam.enable = true;
+  hardware.opengl.driSupport32Bit = true;
+
   services.gnome.gnome-keyring.enable = true;
   services.flatpak.enable = true;
   xdg.portal.enable = true;
@@ -260,12 +263,17 @@
   users.users.hector = {
     isNormalUser = true;
     description = "hector";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "wireshark"];
     packages = with pkgs; [
     #  thunderbird
     ];
   };
   # wireshark fix
+  programs.wireshark = {
+    enable = true;
+    dumpcap.enable = true;
+    usbmon.enable = true;
+  };
   services.udev = {
     extraRules = ''
       SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640"
