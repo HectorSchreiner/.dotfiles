@@ -97,7 +97,7 @@
      yazi
      bat
      dust
-     tokei
+     tokei # get lines of code
      hyprpanel
      wl-clipboard
      dart-sass
@@ -137,13 +137,14 @@
      rustc
      clippy
      rustfmt
-     hugo
      wasm-bindgen-cli
      wasm-pack
      pkg-config     
      docker-compose
      nodejs
      pnpm
+     zulu
+     python313
 
      # hackertools
      nmap
@@ -168,6 +169,9 @@
      obs-studio
      spotify
      onlyoffice-desktopeditors
+     thunderbird
+     wireguard-ui
+     bookworm
   ];
 
   fonts = {
@@ -178,7 +182,7 @@
   };
 
   programs.steam.enable = true;
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
 
   services.gnome.gnome-keyring.enable = true;
   services.flatpak.enable = true;
@@ -298,7 +302,8 @@
 	    fi
 	    rm -f -- "$tmp"
     }
-    alias nordvpn="sudo openvpn --config ~/secrets/albania-nordvpn-conf.ovpn --auth-user-pass ~/secrets/nord-creds.txt"
+    alias nordvpn-albania="sudo openvpn --config ~/secrets/albania-nordvpn-conf.ovpn --auth-user-pass ~/secrets/nord-creds.txt"
+    alias nordvpn-denmark="sudo openvpn --config ~/secrets/denmark-nordvpn-conf.ovpn --auth-user-pass ~/secrets/nord-creds.txt"
     alias rcedit="sudo nvim ~/.bashrc"
     alias rebuild="sudo nixos-rebuild switch --flake ~/.dotfiles"
     alias dot="cd ~/.dotfiles"
@@ -320,8 +325,6 @@
     alias tl="tmux list-sessions"
     alias ta="tmux attach-session"
     alias fcd="fzf_cd"
-
-
   '';
   };
 
