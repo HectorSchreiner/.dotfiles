@@ -102,8 +102,12 @@
      wl-clipboard
      dart-sass
      gtksourceview3
+     webkitgtk_4_1
      libgtop
+     pango
      os-prober
+     gobject-introspection
+     gtk3
 
      # themes
      starship
@@ -119,6 +123,7 @@
      firefox
      librewolf
      chromium
+     tor-browser-bundle-bin
      
      # vm
      virt-manager
@@ -145,6 +150,19 @@
      pnpm
      zulu
      python313
+     urjtag
+     binutils
+     gcc
+     glib
+     libsoup_3
+     webkitgtk_4_1
+     xdotool
+     libiconv
+     lld_20
+     atkmm
+     cairo
+     gdk-pixbuf
+     sqlite
 
      # hackertools
      nmap
@@ -252,7 +270,25 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  services.openssh.enable = true;
+
+  services.openssh = {
+    enable = true;
+    ports = [ 5432 ];
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = true;
+      PermitRootLogin = "no";
+      AllowUsers = [ "hector" ];
+    };
+  };
+
+  services.fail2ban.enable = true;
+
+  services.endlessh = {
+    enable = true;
+    port = 22;
+    openFirewall = false;
+  };
   # Enable sound with pipewire.
 
   security.rtkit.enable = true;
@@ -325,6 +361,7 @@
     alias tl="tmux list-sessions"
     alias ta="tmux attach-session"
     alias fcd="fzf_cd"
+    alias dx="/home/hector/.cargo/bin/dx"
   '';
   };
 
