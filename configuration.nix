@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs,  ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -40,6 +39,7 @@
      xrdp           #rdp
      btop
      marp-cli
+     gdb
 
      p7zip
      zip
@@ -54,6 +54,7 @@
      networkmanagerapplet
      wireguard-tools
      netcat
+     distrobox
 
      # password keyring tools
      gnome-keyring
@@ -64,7 +65,6 @@
      pomodoro
      pass
 
-     xbrightness
      brightnessctl light
      # creative software
      #blender
@@ -108,6 +108,9 @@
      os-prober
      gobject-introspection
      gtk3
+     hyprpanel
+     swaybg
+     prettier
 
      # themes
      starship
@@ -123,7 +126,7 @@
      firefox
      librewolf
      chromium
-     tor-browser-bundle-bin
+     tor-browser
      
      # vm
      virt-manager
@@ -131,7 +134,7 @@
      spice 
      spice-gtk
      spice-protocol
-     win-virtio
+     virtio-win
      win-spice
      
      # development tools
@@ -139,16 +142,22 @@
      rustup
      cargo
      clang
+     clang-tools
+     cmake
      rustc
      clippy
      rustfmt
      wasm-bindgen-cli
      wasm-pack
      pkg-config     
+     libxkbcommon
      docker-compose
      nodejs
      pnpm
+     openjfx21
      zulu
+     scenebuilder
+     signal-desktop
      python313
      urjtag
      binutils
@@ -163,33 +172,36 @@
      cairo
      gdk-pixbuf
      sqlite
+     direnv
+
+     # opengl-deps
+     freeglut
 
      # hackertools
      nmap
-     #rustscan
-     #gobuster
-     #exiftool
+     rustscan
+     gobuster
+     exiftool
      #netexec
      #ffuf
-     #metasploit
+     metasploit
      #exploitdb
      burpsuite
-     #hashcat
-     #hashcat-utils
-     #john
+     hashcat
+     hashcat-utils
+     john
      #aircrack-ng
      wireshark
 
      #  applications
      discord
-     bitwarden
+     bitwarden-desktop
      telegram-desktop
      obs-studio
      spotify
      onlyoffice-desktopeditors
      thunderbird
      wireguard-ui
-     bookworm
   ];
 
   fonts = {
@@ -338,6 +350,9 @@
 	    fi
 	    rm -f -- "$tmp"
     }
+
+    eval "$(direnv hook bash)"
+
     alias nordvpn-albania="sudo openvpn --config ~/secrets/albania-nordvpn-conf.ovpn --auth-user-pass ~/secrets/nord-creds.txt"
     alias nordvpn-denmark="sudo openvpn --config ~/secrets/denmark-nordvpn-conf.ovpn --auth-user-pass ~/secrets/nord-creds.txt"
     alias rcedit="sudo nvim ~/.bashrc"
@@ -388,8 +403,6 @@
       enable = true;
       qemu = {
         swtpm.enable = true;
-        ovmf.enable = true;
-        ovmf.packages = [ pkgs.OVMFFull.fd ];
       };
     };
     spiceUSBRedirection.enable = true;

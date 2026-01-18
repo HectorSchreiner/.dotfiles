@@ -1,6 +1,6 @@
 font-family = "JetbrainsMono Nerd Font"
 freetype-load-flags = hinting
-theme = GruvboxDark
+theme = Gruvbox Material Dark
 macos-titlebar-style = hidden
 background-opacity = 0.8
 gtk-titlebar = false
