@@ -315,7 +315,7 @@
   users.users.hector = {
     isNormalUser = true;
     description = "hector";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "wireshark"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "wireshark" "docker"];
     packages = with pkgs; [
     #  thunderbird
     ];
