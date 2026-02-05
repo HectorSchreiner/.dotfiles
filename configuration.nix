@@ -73,6 +73,10 @@
      #imagemagick
      #godot_4
 
+     # drone configuration and drivers 
+     qgroundcontrol
+     mono
+
      # audio and bluetooth
      blueman
      bluez
@@ -170,6 +174,9 @@
      lld_20
      atkmm
      cairo
+     sbt
+     gtkwave
+     jetbrains.idea
      gdk-pixbuf
      sqlite
      direnv
@@ -351,12 +358,21 @@
 	    rm -f -- "$tmp"
     }
 
+    function nnix() {
+      cd ~/.dotfiles
+      nvim ~/.dotfiles/configuration.nix
+      git add .
+      git commit
+      git push
+    }
+
     eval "$(direnv hook bash)"
 
     alias nordvpn-albania="sudo openvpn --config ~/secrets/albania-nordvpn-conf.ovpn --auth-user-pass ~/secrets/nord-creds.txt"
     alias nordvpn-denmark="sudo openvpn --config ~/secrets/denmark-nordvpn-conf.ovpn --auth-user-pass ~/secrets/nord-creds.txt"
     alias rcedit="sudo nvim ~/.bashrc"
     alias rebuild="sudo nixos-rebuild switch --flake ~/.dotfiles"
+    alias gpp="g++ -std=c++23"
     alias dot="cd ~/.dotfiles"
     alias conf="cd ~/.config/"
     alias nixedit="nvim ~/.dotfiles/configuration.nix"
