@@ -484,5 +484,6 @@
   "theme.bar.buttons.radius": "0.1em",
   "theme.bar.dropdownGap": "2.9em",
   "theme.bar.margin_top": "0.5em",
-  "menus.media.displayTimeTooltip": false
+  "menus.media.displayTimeTooltip": false,
+  "menus.dashboard.powermenu.logout": "hyprlock"
 }

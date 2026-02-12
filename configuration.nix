@@ -40,6 +40,9 @@
      btop
      marp-cli
      gdb
+     hyprlock
+     hyprlauncher
+     hyprshutdown
 
      p7zip
      zip
@@ -144,6 +147,7 @@
      # development tools
      github-desktop
      rustup
+     lua
      cargo
      clang
      clang-tools
@@ -176,7 +180,6 @@
      cairo
      sbt
      gtkwave
-     jetbrains.idea
      gdk-pixbuf
      sqlite
      direnv
@@ -396,7 +399,6 @@
   '';
   };
 
-  # Install firefox.
   programs.firefox.enable = true;
 
   services.ollama = {
