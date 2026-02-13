@@ -42,7 +42,6 @@
      gdb
      hyprlock
      hyprlauncher
-     hyprshutdown
 
      p7zip
      zip
@@ -277,8 +276,17 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  services.displayManager.ly = {
+  enable = true;
+  settings = {
+    animation = "doom"; # Options: "doom", "matrix", or "off"
+    # hide_borders = true;
+    save = true;
+    load = true;
+  };
+};
+
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -305,6 +313,9 @@
   };
 
   services.fail2ban.enable = true;
+
+  services.fprintd.enable = true;
+  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix;
 
   services.endlessh = {
     enable = true;
