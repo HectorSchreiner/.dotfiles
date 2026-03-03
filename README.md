@@ -3,6 +3,8 @@ These are my Gruvbox dotfiles for nixos.
 ![Gruvbox](screenshots/desktop.png)
 ![Gruvbox](screenshots/desktop_2.png)
 ![Gruvbox](screenshots/desktop_3.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9815b905-96cc-4b7b-8436-33a1df8c84af" />
+
 
 # Programs
 - Hyprland
