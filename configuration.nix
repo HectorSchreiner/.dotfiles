@@ -31,6 +31,7 @@
      flameshot
      grim
      swappy
+     conda
      slurp
      nitch
      usbutils
@@ -57,6 +58,7 @@
      wireguard-tools
      netcat
      distrobox
+     zathura
 
      # password keyring tools
      gnome-keyring
