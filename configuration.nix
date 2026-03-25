@@ -148,7 +148,12 @@
      # development tools
      github-desktop
      rustup
+     llvmPackages.bintools
      lua
+     nil
+     nixd
+     rust-analyzer
+     zeek
      cargo
      clang
      clang-tools
@@ -184,6 +189,7 @@
      gdk-pixbuf
      sqlite
      direnv
+     openfpgaloader
 
      # opengl-deps
      freeglut
@@ -205,6 +211,8 @@
      wireshark
 
      #  applications
+     #  s
+     solaar
      discord
      bitwarden-desktop
      telegram-desktop
@@ -221,6 +229,10 @@
       pkgs.nerd-fonts.jetbrains-mono
     ];
   };
+
+  services.udev.packages = with pkgs; [ 
+    openfpgaloader 
+  ];
 
   programs.steam.enable = true;
   hardware.graphics.enable32Bit = true;
@@ -281,7 +293,6 @@
   services.displayManager.ly = {
   enable = true;
   settings = {
-    animation = "doom"; # Options: "doom", "matrix", or "off"
     # hide_borders = true;
     save = true;
     load = true;
@@ -338,7 +349,7 @@
   users.users.hector = {
     isNormalUser = true;
     description = "hector";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "wireshark" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "wireshark" "docker" "plugdev"];
     packages = with pkgs; [
     #  thunderbird
     ];
