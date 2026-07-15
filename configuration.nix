@@ -7,221 +7,222 @@
     ];
 
    environment.systemPackages = with pkgs; [
-     # essentials
-     vim
-     neovim
-     wget
-     flatpak
-     curl
-     wget
-     git
-     bat
-     eza
-     fzf
-     tmux
-     zsh
-     htop
-     file
-     dig
-     ffmpeg
-     strace
-     ltrace
-     vlc
-     fastfetch
-     flameshot
-     grim
-     swappy
-     conda
-     slurp
-     nitch
-     usbutils
-     grimblast
-     remmina        #rdp
-     xrdp           #rdp
-     btop
-     marp-cli
-     gdb
-     hyprlock
-     hyprlauncher
+     # ai
+     lmstudio
 
-     p7zip
-     zip
-     unzip
-
-     # Network tools
-     openvpn
-     playerctl
-     openssl_3
-     openssh
-     inetutils
-     networkmanagerapplet
-     wireguard-tools
-     netcat
-     distrobox
+     # applications
+     discord
+     obs-studio
+     pomodoro
+     signal-desktop
+     spotify
+     telegram-desktop
      zathura
 
-     # password keyring tools
-     gnome-keyring
-     libsecret
-     kdePackages.signon-kwallet-extension
-     wgnord
-     gnome-keyring
-     pomodoro
-     pass
+     # archives
+     p7zip
+     unzip
+     zip
 
-     brightnessctl light
-     # creative software
-     #blender
-     #kdenlive
-     #gimp
-     #imagemagick
-     #godot_4
-
-     # drone configuration and drivers 
-     qgroundcontrol
-     mono
-
-     # audio and bluetooth
+     # audio & bluetooth
      blueman
      bluez
+     playerctl
 
-     #math and school
-     sage
-     typst
-
-     # dotfiles
-     kitty
-     alacritty
-     waybar
-     dunst
-     hyprpaper
-     wofi
-     rofi
-     stow
-     hyprcursor
-     wlogout
-     swaylock
-     zoxide
-     yazi
-     bat
-     dust
-     tokei # get lines of code
-     hyprpanel
-     wl-clipboard
-     dart-sass
-     gtksourceview3
-     webkitgtk_4_1
-     libgtop
-     pango
-     os-prober
-     gobject-introspection
-     gtk3
-     hyprpanel
-     swaybg
-     prettier
-
-     # themes
-     starship
-     adwaita-icon-theme
-
-     # text
-     obsidian
-     vscode
-     libreoffice-qt6-fresh
-     zed-editor
-
-     # browsers zen browser as a flake
+     # browsers
+     chromium
      firefox
      librewolf
-     chromium
      tor-browser
-     
-     # vm
-     virt-manager
-     virt-viewer
-     spice 
-     spice-gtk
-     spice-protocol
-     virtio-win
-     win-spice
-     
-     # development tools
+
+     # creative
+     #blender
+     #gimp
+     #godot_4
+     #imagemagick
+     #kdenlive
+     ffmpeg
+     flameshot
+     grim
+     grimblast
+     slurp
+     swappy
+     vlc
+
+     # desktop & dotfiles
+     alacritty
+     dunst
+     hyprcursor
+     hyprlauncher
+     hyprlock
+     hyprpanel
+     hyprpaper
+     kitty
+     rofi
+     stow
+     swaybg
+     swaylock
+     waybar
+     wl-clipboard
+     wlogout
+     wofi
+     xdotool
+
+     # development
+     binutils
+     cargo
+     clang
+     clang-tools
+     clippy
+     cmake
+     conda
+     dart-sass
+     direnv
+     gcc
+     gdb
      github-desktop
-     rustup
+     gnumake
+     gtkwave
+     lld_20
      llvmPackages.bintools
      lua
      nil
      nixd
+     nodejs
+     openfpgaloader
+     openjfx21
+     pkg-config
+     pnpm
+     prettier
+     python313
      rust-analyzer
-     zeek
-     cargo
-     clang
-     clang-tools
-     cmake
      rustc
-     clippy
      rustfmt
+     rustup
+     sbt
+     scenebuilder
+     sqlite
+     tokei
+     urjtag
+     uv
      wasm-bindgen-cli
      wasm-pack
-     pkg-config     
-     libxkbcommon
-     docker-compose
-     nodejs
-     pnpm
-     openjfx21
      zulu
-     scenebuilder
-     signal-desktop
-     python313
-     urjtag
-     binutils
-     gcc
-     glib
-     libsoup_3
-     webkitgtk_4_1
-     xdotool
-     libiconv
-     lld_20
-     atkmm
-     cairo
-     sbt
-     gtkwave
-     gdk-pixbuf
-     sqlite
-     direnv
-     openfpgaloader
 
-     # opengl-deps
-     freeglut
+     # drone
+     mono
+     qgroundcontrol
 
-     # hackertools
-     nmap
-     rustscan
-     gobuster
-     exiftool
-     #netexec
-     #ffuf
-     metasploit
-     #exploitdb
+     # essentials
+     bat
+     btop
+     curl
+     dig
+     dust
+     eza
+     fastfetch
+     file
+     flatpak
+     fzf
+     git
+     htop
+     ltrace
+     nitch
+     os-prober
+     strace
+     tmux
+     usbutils
+     wget
+     yazi
+     zoxide
+     zsh
+
+     # hacker
+     #aircrack-ng
      burpsuite
+     #exploitdb
+     exiftool
+     #ffuf
+     gobuster
      hashcat
      hashcat-utils
      john
-     #aircrack-ng
+     metasploit
+     #netexec
+     nmap
+     rustscan
      wireshark
+     zeek
 
-     #  applications
-     #  s
+     # hardware & system
+     atkmm
+     brightnessctl
+     cairo
+     freeglut
+     gdk-pixbuf
+     glib
+     gobject-introspection
+     gtk3
+     gtksourceview3
+     libgtop
+     libiconv
+     libsoup_3
+     libxkbcommon
+     pango
      solaar
-     discord
+     webkitgtk_4_1
+
+     # math & school
+     marp-cli
+     sage
+
+     # network
+     inetutils
+     netcat
+     networkmanagerapplet
+     openssh
+     openssl_3
+     openvpn
+     remmina
+     wgnord
+     mullvad-vpn
+     wireguard-tools
+     wireguard-ui
+     xrdp
+
+     # password & keyring
      bitwarden-desktop
-     telegram-desktop
-     obs-studio
-     spotify
+     gnome-keyring
+     kdePackages.signon-kwallet-extension
+     libsecret
+     pass
+
+     # text & editors
+     libreoffice-qt6-fresh
+     neovim
+     obsidian
      onlyoffice-desktopeditors
      thunderbird
-     wireguard-ui
-  ];
+     typst
+     vim
+     vscode
+     zed-editor
+
+     # themes
+     adwaita-icon-theme
+     starship
+
+     # virtualisation & containers
+     distrobox
+     docker-compose
+     spice
+     spice-gtk
+     spice-protocol
+     virt-manager
+     virt-viewer
+     virtio-win
+     win-spice
+   ];
 
   fonts = {
     enableDefaultPackages = true;
@@ -234,6 +235,14 @@
     openfpgaloader 
   ];
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+    zlib
+    glib
+  ];
+
+
   programs.steam.enable = true;
   hardware.graphics.enable32Bit = true;
 
@@ -242,9 +251,6 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [ ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boo
@@ -349,7 +355,7 @@
   users.users.hector = {
     isNormalUser = true;
     description = "hector";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "wireshark" "docker" "plugdev"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "wireshark" "docker" "plugdev" "dialout"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -432,6 +438,7 @@
   services.open-webui.enable = true;
 
   programs.dconf.enable = true;
+  #hardware.graphics.enable = true;
  
  programs.nh = {
     enable = true;

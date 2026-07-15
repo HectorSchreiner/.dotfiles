@@ -15,9 +15,14 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, zen-browser, ghostty, nix-snapd, spicetify-nix, ... }:
+  outputs = { self, nixpkgs, zen-browser, ghostty, nix-snapd, spicetify-nix, antigravity-nix, ... }:
   let
     system = "x86_64-linux";
 
@@ -28,6 +33,8 @@
 
     zen  = zen-browser.packages.${system}.default;
     ghst = ghostty.packages.${system}.default;
+    antigravity-desktop = antigravity-nix.packages.${system}.default;
+    antigravity-cli = antigravity-nix.packages.${system}.google-antigravity-cli;
     
     # Define spicePkgs here so it's accessible inside your inline module
     spicePkgs = spicetify-nix.legacyPackages.${system};
@@ -42,16 +49,19 @@
           ./configuration.nix
           nix-snapd.nixosModules.default { services.snap.enable = true; }
           
-          # 1. Import the Spicetify NixOS module
           spicetify-nix.nixosModules.default
 
           ({ pkgs, ... }: {
             environment.systemPackages = with pkgs; [
               zen
               ghst
+              ghdl
+              yosys
+              nextpnr
+              antigravity-desktop
+              antigravity-cli
             ];
 
-            # 2. Configure Spicetify
             programs.spicetify = {
               enable = true;
 
