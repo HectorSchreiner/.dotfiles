@@ -6,18 +6,25 @@
       #./modules/common-packages.nix
     ];
 
+
    environment.systemPackages = with pkgs; [
      # ai
      lmstudio
+    
+     vulkan-loader
+     libxkbcommon
+     wayland
+     libglvnd
 
      # applications
      discord
+     claude-code
      obs-studio
      pomodoro
-     signal-desktop
      spotify
      telegram-desktop
      zathura
+     bambu-studio
 
      # archives
      p7zip
@@ -36,8 +43,9 @@
      tor-browser
 
      # creative
+     kicad
      #blender
-     #gimp
+     gimp
      #godot_4
      #imagemagick
      #kdenlive
@@ -70,11 +78,13 @@
 
      # development
      binutils
+     gcc-arm-embedded
      cargo
      clang
      clang-tools
      clippy
      cmake
+     ninja
      conda
      dart-sass
      direnv
@@ -136,6 +146,7 @@
      yazi
      zoxide
      zsh
+     ripes
 
      # hacker
      #aircrack-ng
@@ -152,7 +163,8 @@
      nmap
      rustscan
      wireshark
-     zeek
+     #zeek
+     tailscale
 
      # hardware & system
      atkmm
@@ -174,6 +186,8 @@
 
      # math & school
      marp-cli
+     ltspice
+     appimage-run
      sage
 
      # network
@@ -207,6 +221,7 @@
      vim
      vscode
      zed-editor
+     jetbrains.rust-rover
 
      # themes
      adwaita-icon-theme
@@ -222,6 +237,7 @@
      virt-viewer
      virtio-win
      win-spice
+     cosmic-edit
    ];
 
   fonts = {
@@ -235,6 +251,7 @@
     openfpgaloader 
   ];
 
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc.lib
@@ -245,6 +262,9 @@
 
   programs.steam.enable = true;
   hardware.graphics.enable32Bit = true;
+  services.mullvad-vpn.enable = true;
+  services.resolved.enable = true;
+  services.tailscale.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
   services.flatpak.enable = true;
@@ -263,7 +283,7 @@
   virtualisation.docker = {
     enable = true;
   };
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -322,14 +342,16 @@
 
   services.openssh = {
     enable = true;
-    ports = [ 5432 ];
+    ports = [ 12321 ];
     settings = {
       PasswordAuthentication = false;
-      KbdInteractiveAuthentication = true;
+      KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
       AllowUsers = [ "hector" ];
     };
   };
+  
+  services.desktopManager.cosmic.enable = true;
 
   services.fail2ban.enable = true;
 
@@ -426,6 +448,7 @@
     alias ta="tmux attach-session"
     alias fcd="fzf_cd"
     alias dx="/home/hector/.cargo/bin/dx"
+    alias matlab-shell="nix run gitlab:doronbehar/nix-matlab#matlab-shell"
   '';
   };
 
@@ -446,7 +469,7 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/user/my-nixos-config";
   };
-  
+
   virtualisation = {
     libvirtd = {
       enable = true;
