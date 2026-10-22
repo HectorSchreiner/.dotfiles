@@ -293,6 +293,42 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # DTU WPA2-Enterprise, declarative so COSMIC can't strip the CA cert.
+  # Credentials live outside the repo in /etc/nixos/secrets/wifi.env (DTU_USER=, DTU_PASS=).
+  # EAP settings from DTU's eduroam CAT installer.
+  networking.networkmanager.ensureProfiles = {
+    environmentFiles = [ "/etc/nixos/secrets/wifi.env" ];
+    profiles = let
+      dtuWifi = ssid: {
+        connection = {
+          id = ssid;
+          type = "wifi";
+          autoconnect-priority = 10; # prefer over the phone hotspot at boot
+          autoconnect-retries = 0;   # DTU's RADIUS is flaky, keep retrying instead of giving up
+        };
+        wifi = { mode = "infrastructure"; ssid = ssid; };
+        wifi-security.key-mgmt = "wpa-eap";
+        "802-1x" = {
+          eap = "peap";
+          phase2-auth = "mschapv2";
+          phase1-auth-flags = 16; # tls-1-3-disable; DTU's ISE negotiates TLS 1.2 anyway
+          auth-timeout = 5;       # a good attempt (scan + handshake) takes ~3s; the first one after boot often stalls forever, so give up fast and retry
+          identity = "$DTU_USER";
+          password = "$DTU_PASS";
+          password-flags = 0; # stored system-wide, no secret agent needed
+          anonymous-identity = "anonymous@dtu.dk";
+          domain-suffix-match = "win.dtu.dk";
+          ca-cert = "${./dtu-eduroam.pem}";
+        };
+        ipv4.method = "auto";
+        ipv6.method = "auto";
+      };
+    in {
+      eduroam = dtuWifi "eduroam";
+      DTUsecure = dtuWifi "DTUsecure";
+    };
+  };
   #virtualisation.docker.enable = true;
 
   # Set your time zone.

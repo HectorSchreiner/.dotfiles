@@ -47,7 +47,13 @@
 
         modules = [
           ./configuration.nix
-          nix-snapd.nixosModules.default { services.snap.enable = true; }
+          nix-snapd.nixosModules.default
+          {
+            services.snap.enable = true;
+            # nix-snapd starts its units via a glob; en_DK collation sorts
+            # snap.mesa-*.service before its snap-mesa-*.mount, so force byte order.
+            systemd.services.snapd.environment.LC_COLLATE = "C";
+          }
           
           spicetify-nix.nixosModules.default
 
